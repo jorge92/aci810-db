@@ -10,6 +10,7 @@ public class Person implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String user;
 	
 	public long getId() {
 		return id;
@@ -35,6 +36,15 @@ public class Person implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getUser() {
+		return user;
+	}
+	
+	public void setUser(String user) {
+		this.user = user;
+	}
+	
 	
 	@Override
 	  public String toString() {

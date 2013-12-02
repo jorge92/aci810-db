@@ -44,6 +44,9 @@ public class PersonActivity extends Activity {
 			EditText emailField = (EditText) this.findViewById(R.id.emailField);
 			emailField.setText(p.getEmail());
 			
+			EditText userField = (EditText) this.findViewById(R.id.userField);
+			userField.setText(p.getUser());
+			
 			Button saveButton = (Button) this.findViewById(R.id.saveButton);
 			saveButton.setText("Update");
 			
@@ -111,7 +114,10 @@ public class PersonActivity extends Activity {
 		EditText emailField = (EditText) this.findViewById(R.id.emailField);
 		String email = emailField.getText().toString();
 		
-		if(firstName.isEmpty() || lastName.isEmpty() || email.isEmpty())
+		EditText userField = (EditText) this.findViewById(R.id.userField);
+		String user = userField.getText().toString();
+		
+		if(firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || user.isEmpty())
 		{
 			Toast.makeText(this, "Complete the form before saving", Toast.LENGTH_LONG).show();
 			return;
@@ -121,11 +127,11 @@ public class PersonActivity extends Activity {
 		
 		if(this.personToUpdate != null)
 		{
-			p = ds.updatePerson(this.personToUpdate, firstName, lastName, email);
+			p = ds.updatePerson(this.personToUpdate, firstName, lastName, email, user);
 		}
 		else
 		{
-			p = ds.createPerson(firstName, lastName, email);
+			p = ds.createPerson(firstName, lastName, email, user);
 		}
 		
 		Intent i = new Intent();

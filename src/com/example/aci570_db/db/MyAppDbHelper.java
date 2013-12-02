@@ -21,18 +21,19 @@ public class MyAppDbHelper extends SQLiteOpenHelper {
 	
 	private static final String COMMA_SEPARATOR = ",";
 	
-	private static final String SQL_CREATE_PEOPLE =
+	private static final String SQL_CREATE_PEOPLE =				//crear tabla
 		    "CREATE TABLE " + People.TABLE_NAME + " (" +
 		    People._ID + " INTEGER PRIMARY KEY," +
 		    People.COLUMN_NAME_FIRST_NAME + TEXT_TYPE + COMMA_SEPARATOR +
 		    People.COLUMN_NAME_LAST_NAME + TEXT_TYPE + COMMA_SEPARATOR +
-		    People.COLUMN_NAME_EMAIL + TEXT_TYPE +
+		    People.COLUMN_NAME_EMAIL + TEXT_TYPE + COMMA_SEPARATOR +
+		    People.COLUMN_NAME_USER + TEXT_TYPE +
 		    " )";
 	
-	private static final String SQL_DROP_PEOPLE =
+	private static final String SQL_DROP_PEOPLE =				//eliminar tabla
 		    "DROP TABLE IF EXISTS " + People.TABLE_NAME;
     
-    public MyAppDbHelper(Context context) {
+    public MyAppDbHelper(Context context) {						
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     
@@ -40,7 +41,7 @@ public class MyAppDbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_PEOPLE);
     }
     
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {			//se ejecuta cada vez que se actualize el numero de version
     	Log.w(
     			MyAppDbHelper.class.getName(),
     			"Upgrading database from version " + oldVersion + " to " + newVersion + ", which will destroy all old data"

@@ -14,5 +14,6 @@
     <string name="add_button_label">Add</string>
     <string name="save_button_label">Save</string>
     <string name="delete_button_label">Delete</string>
+    <string name="user">User</string>
 
 </resources>

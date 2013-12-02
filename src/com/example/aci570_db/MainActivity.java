@@ -32,7 +32,7 @@ public class MainActivity extends ListActivity {
 		ds = new MyAppDataSource(this);
 	    ds.open();
 	    
-	    List<Person> values = ds.getPeople();
+	    List<Person> values = ds.getPeople();		//llama la Query y envia una lista de personas
 	    
 	    // use the SimpleCursorAdapter to show the elements in a ListView
 	    ArrayAdapter<Person> adapter = new ArrayAdapter<Person>(
@@ -44,7 +44,7 @@ public class MainActivity extends ListActivity {
 	    this.setListAdapter(adapter);
 	    
 	    ListView lv = (ListView) this.findViewById(android.R.id.list);
-	    lv.setOnItemClickListener(new ListViewItemClickListener(this));
+	    lv.setOnItemClickListener(new ListViewItemClickListener(this));		//
 	}
 	
 	@Override

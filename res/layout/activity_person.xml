@@ -35,6 +35,14 @@
 	      android:ems="10"
 	      android:hint="@string/email_label" />
 	
+	<EditText
+	    android:id="@+id/userField"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:ems="10"
+	    android:hint="@string/user"
+	    android:inputType="textEmailAddress" />
+	
 	 <Button
 	        android:id="@+id/saveButton"
 	        android:layout_width="wrap_content"
