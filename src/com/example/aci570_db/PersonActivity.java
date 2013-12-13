@@ -53,6 +53,8 @@ public class PersonActivity extends Activity {
 			Button deleteButton = (Button) this.findViewById(R.id.deleteButton);
 			deleteButton.setVisibility(Button.VISIBLE);
 			
+			deleteButton.setText("Delete");
+			
 			this.setTitle("Update Person");
 			
 			this.personToUpdate = p;
@@ -63,7 +65,7 @@ public class PersonActivity extends Activity {
 	    	saveButton.setText("Create");
 	    	
 	    	Button deleteButton = (Button) this.findViewById(R.id.deleteButton);
-	    	deleteButton.setVisibility(Button.VISIBLE);
+	    	deleteButton.setVisibility(Button.INVISIBLE);
 	    	
 	    	this.setTitle("Create Person");
 	    	
